@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nome": "Chicago Bulls",
+    "cidade": "Chicago",
+    "sigla": "CHI"
+  },
+  {
+    "id": 2,
+    "nome": "Los Angeles Lakers",
+    "cidade": "Los Angeles",
+    "sigla": "LAL"
+  },
+  {
+    "id": 3,
+    "nome": "Boston Celtics",
+    "cidade": "Boston",
+    "sigla": "BOS"
+  },
+  {
+    "id": 4,
+    "nome": "Golden State Warriors",
+    "cidade": "San Francisco",
+    "sigla": "GSW"
+  }
+]
