@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/api/teams", (req, res) => {
-  res.json({ teams });
+  res.json(teams);
 });
 
 app.listen(3000, () => {
