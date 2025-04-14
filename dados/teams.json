@@ -1,26 +1,522 @@
-[
-  {
-    "id": 1,
-    "nome": "Chicago Bulls",
-    "cidade": "Chicago",
-    "sigla": "CHI"
-  },
-  {
-    "id": 2,
-    "nome": "Los Angeles Lakers",
-    "cidade": "Los Angeles",
-    "sigla": "LAL"
-  },
-  {
-    "id": 3,
-    "nome": "Boston Celtics",
-    "cidade": "Boston",
-    "sigla": "BOS"
-  },
-  {
-    "id": 4,
-    "nome": "Golden State Warriors",
-    "cidade": "San Francisco",
-    "sigla": "GSW"
-  }
-]
+{
+  "teams": [
+    {
+      "id": 1,
+      "nome": "Chicago Bulls",
+      "cidade": "Chicago",
+      "sigla": "CHI",
+      "ano_fundacao": 1966,
+      "arena": "United Center",
+      "titulos": {
+        "NBA": 6,
+        "Conferencias": 6,
+        "Divisoes": 9
+      },
+      "principais_jogadores": [
+        "Michael Jordan",
+        "Scottie Pippen",
+        "Dennis Rodman"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/6/67/Chicago_Bulls_logo.svg"
+    },
+    {
+      "id": 2,
+      "nome": "Los Angeles Lakers",
+      "cidade": "Los Angeles",
+      "sigla": "LAL",
+      "ano_fundacao": 1947,
+      "arena": "Crypto.com Arena",
+      "titulos": {
+        "NBA": 17,
+        "Conferencias": 32,
+        "Divisoes": 24
+      },
+      "principais_jogadores": [
+        "Magic Johnson",
+        "Kobe Bryant",
+        "Kareem Abdul-Jabbar"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Los_Angeles_Lakers_logo.svg"
+    },
+    {
+      "id": 3,
+      "nome": "Boston Celtics",
+      "cidade": "Boston",
+      "sigla": "BOS",
+      "ano_fundacao": 1946,
+      "arena": "TD Garden",
+      "titulos": {
+        "NBA": 17,
+        "Conferencias": 21,
+        "Divisoes": 12
+      },
+      "principais_jogadores": ["Bill Russell", "Larry Bird", "Paul Pierce"],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/8/8f/Boston_Celtics.svg"
+    },
+    {
+      "id": 4,
+      "nome": "Golden State Warriors",
+      "cidade": "San Francisco",
+      "sigla": "GSW",
+      "ano_fundacao": 1946,
+      "arena": "Chase Center",
+      "titulos": {
+        "NBA": 7,
+        "Conferencias": 7,
+        "Divisoes": 7
+      },
+      "principais_jogadores": [
+        "Stephen Curry",
+        "Klay Thompson",
+        "Draymond Green"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/0/01/Golden_State_Warriors_logo.svg"
+    },
+    {
+      "id": 5,
+      "nome": "Miami Heat",
+      "cidade": "Miami",
+      "sigla": "MIA",
+      "ano_fundacao": 1988,
+      "arena": "Kaseya Center",
+      "titulos": {
+        "NBA": 3,
+        "Conferencias": 6,
+        "Divisoes": 16
+      },
+      "principais_jogadores": ["Dwyane Wade", "LeBron James", "Chris Bosh"],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/f/fb/Miami_Heat_logo.svg"
+    },
+    {
+      "id": 6,
+      "nome": "Brooklyn Nets",
+      "cidade": "Brooklyn",
+      "sigla": "BKN",
+      "ano_fundacao": 1967,
+      "arena": "Barclays Center",
+      "titulos": {
+        "NBA": 0,
+        "Conferencias": 2,
+        "Divisoes": 5
+      },
+      "principais_jogadores": ["Jason Kidd", "Kevin Durant", "Kyrie Irving"],
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/4/44/Brooklyn_Nets_newlogo.svg"
+    },
+    {
+      "id": 7,
+      "nome": "New York Knicks",
+      "cidade": "New York",
+      "sigla": "NYK",
+      "ano_fundacao": 1946,
+      "arena": "Madison Square Garden",
+      "titulos": {
+        "NBA": 2,
+        "Conferencias": 8,
+        "Divisoes": 5
+      },
+      "principais_jogadores": ["Walt Frazier", "Patrick Ewing", "Willis Reed"],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/2/25/New_York_Knicks_logo.svg"
+    },
+    {
+      "id": 8,
+      "nome": "Phoenix Suns",
+      "cidade": "Phoenix",
+      "sigla": "PHX",
+      "ano_fundacao": 1968,
+      "arena": "Footprint Center",
+      "titulos": {
+        "NBA": 0,
+        "Conferencias": 3,
+        "Divisoes": 7
+      },
+      "principais_jogadores": ["Steve Nash", "Charles Barkley", "Devin Booker"],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/d/dc/Phoenix_Suns_logo.svg"
+    },
+    {
+      "id": 9,
+      "nome": "San Antonio Spurs",
+      "cidade": "San Antonio",
+      "sigla": "SAS",
+      "ano_fundacao": 1967,
+      "arena": "Frost Bank Center",
+      "titulos": {
+        "NBA": 5,
+        "Conferencias": 6,
+        "Divisoes": 22
+      },
+      "principais_jogadores": ["Tim Duncan", "Tony Parker", "Manu Ginóbili"],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/a/a2/San_Antonio_Spurs.svg"
+    },
+    {
+      "id": 10,
+      "nome": "Dallas Mavericks",
+      "cidade": "Dallas",
+      "sigla": "DAL",
+      "ano_fundacao": 1980,
+      "arena": "American Airlines Center",
+      "titulos": {
+        "NBA": 1,
+        "Conferencias": 2,
+        "Divisoes": 4
+      },
+      "principais_jogadores": ["Dirk Nowitzki", "Luka Dončić", "Jason Kidd"],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/9/97/Dallas_Mavericks_logo.svg"
+    },
+    {
+      "id": 11,
+      "nome": "Philadelphia 76ers",
+      "cidade": "Philadelphia",
+      "sigla": "PHI",
+      "ano_fundacao": 1946,
+      "arena": "Wells Fargo Center",
+      "titulos": {
+        "NBA": 3,
+        "Conferencias": 9,
+        "Divisoes": 6
+      },
+      "principais_jogadores": [
+        "Allen Iverson",
+        "Joel Embiid",
+        "Charles Barkley"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/0/0e/Philadelphia_76ers_logo.svg"
+    },
+    {
+      "id": 12,
+      "nome": "Milwaukee Bucks",
+      "cidade": "Milwaukee",
+      "sigla": "MIL",
+      "ano_fundacao": 1968,
+      "arena": "Fiserv Forum",
+      "titulos": {
+        "NBA": 2,
+        "Conferencias": 3,
+        "Divisoes": 17
+      },
+      "principais_jogadores": [
+        "Kareem Abdul-Jabbar",
+        "Giannis Antetokounmpo",
+        "Oscar Robertson"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/4/4a/Milwaukee_Bucks_logo.svg"
+    },
+    {
+      "id": 13,
+      "nome": "Denver Nuggets",
+      "cidade": "Denver",
+      "sigla": "DEN",
+      "ano_fundacao": 1967,
+      "arena": "Ball Arena",
+      "titulos": {
+        "NBA": 1,
+        "Conferencias": 1,
+        "Divisoes": 12
+      },
+      "principais_jogadores": [
+        "Nikola Jokić",
+        "Carmelo Anthony",
+        "Alex English"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/7/76/Denver_Nuggets.svg"
+    },
+    {
+      "id": 14,
+      "nome": "Cleveland Cavaliers",
+      "cidade": "Cleveland",
+      "sigla": "CLE",
+      "ano_fundacao": 1970,
+      "arena": "Rocket Mortgage FieldHouse",
+      "titulos": {
+        "NBA": 1,
+        "Conferencias": 5,
+        "Divisoes": 7
+      },
+      "principais_jogadores": ["LeBron James", "Kyrie Irving", "Kevin Love"],
+      "logo": "https://cdn.freebiesupply.com/images/large/2x/cleveland-cavaliers-logo-transparent.png"
+    },
+    {
+      "id": 15,
+      "nome": "Toronto Raptors",
+      "cidade": "Toronto",
+      "sigla": "TOR",
+      "ano_fundacao": 1995,
+      "arena": "Scotiabank Arena",
+      "titulos": {
+        "NBA": 1,
+        "Conferencias": 1,
+        "Divisoes": 7
+      },
+      "principais_jogadores": [
+        "Kawhi Leonard",
+        "Vince Carter",
+        "DeMar DeRozan"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/3/36/Toronto_Raptors_logo.svg"
+    },
+    {
+      "id": 16,
+      "nome": "Atlanta Hawks",
+      "cidade": "Atlanta",
+      "sigla": "ATL",
+      "ano_fundacao": 1946,
+      "arena": "State Farm Arena",
+      "titulos": {
+        "NBA": 1,
+        "Conferencias": 4,
+        "Divisoes": 12
+      },
+      "principais_jogadores": [
+        "Dominique Wilkins",
+        "Trae Young",
+        "Dikembe Mutombo"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/2/24/Atlanta_Hawks_logo.svg"
+    },
+    {
+      "id": 17,
+      "nome": "Portland Trail Blazers",
+      "cidade": "Portland",
+      "sigla": "POR",
+      "ano_fundacao": 1970,
+      "arena": "Moda Center",
+      "titulos": {
+        "NBA": 1,
+        "Conferencias": 3,
+        "Divisoes": 6
+      },
+      "principais_jogadores": [
+        "Clyde Drexler",
+        "Damian Lillard",
+        "Bill Walton"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/2/21/Portland_Trail_Blazers_logo.svg"
+    },
+    {
+      "id": 18,
+      "nome": "Indiana Pacers",
+      "cidade": "Indianapolis",
+      "sigla": "IND",
+      "ano_fundacao": 1967,
+      "arena": "Gainbridge Fieldhouse",
+      "titulos": {
+        "NBA": 0,
+        "Conferencias": 1,
+        "Divisoes": 6
+      },
+      "principais_jogadores": [
+        "Reggie Miller",
+        "Paul George",
+        "Jermaine O'Neal"
+      ],
+      "logo": "https://cdn.freebiesupply.com/images/large/2x/indiana-pacers-logo-transparent.png"
+    },
+    {
+      "id": 19,
+      "nome": "Utah Jazz",
+      "cidade": "Salt Lake City",
+      "sigla": "UTA",
+      "ano_fundacao": 1974,
+      "arena": "Delta Center",
+      "titulos": {
+        "NBA": 0,
+        "Conferencias": 2,
+        "Divisoes": 11
+      },
+      "principais_jogadores": [
+        "Karl Malone",
+        "John Stockton",
+        "Donovan Mitchell"
+      ],
+      "logo": "https://cdn.freebiesupply.com/images/large/2x/utah-jazz-logo-transparent.png"
+    },
+    {
+      "id": 20,
+      "nome": "New Orleans Pelicans",
+      "cidade": "New Orleans",
+      "sigla": "NOP",
+      "ano_fundacao": 2002,
+      "arena": "Smoothie King Center",
+      "titulos": {
+        "NBA": 0,
+        "Conferencias": 0,
+        "Divisoes": 1
+      },
+      "principais_jogadores": [
+        "Chris Paul",
+        "Anthony Davis",
+        "Zion Williamson"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/0/0d/New_Orleans_Pelicans_logo.svg"
+    },
+    {
+      "id": 21,
+      "nome": "Charlotte Hornets",
+      "cidade": "Charlotte",
+      "sigla": "CHA",
+      "ano_fundacao": 1988,
+      "arena": "Spectrum Center",
+      "titulos": {
+        "NBA": 0,
+        "Conferencias": 0,
+        "Divisoes": 1
+      },
+      "principais_jogadores": ["Kemba Walker", "Larry Johnson", "LaMelo Ball"],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/c/c4/Charlotte_Hornets_%282014%29.svg"
+    },
+    {
+      "id": 22,
+      "nome": "Detroit Pistons",
+      "cidade": "Detroit",
+      "sigla": "DET",
+      "ano_fundacao": 1941,
+      "arena": "Little Caesars Arena",
+      "titulos": {
+        "NBA": 3,
+        "Conferencias": 5,
+        "Divisoes": 9
+      },
+      "principais_jogadores": [
+        "Isiah Thomas",
+        "Ben Wallace",
+        "Chauncey Billups"
+      ],
+      "logo": "https://cdn.freebiesupply.com/images/large/2x/detroit-pistons-logo-transparent.png"
+    },
+    {
+      "id": 23,
+      "nome": "Houston Rockets",
+      "cidade": "Houston",
+      "sigla": "HOU",
+      "ano_fundacao": 1967,
+      "arena": "Toyota Center",
+      "titulos": {
+        "NBA": 2,
+        "Conferencias": 4,
+        "Divisoes": 8
+      },
+      "principais_jogadores": ["Hakeem Olajuwon", "Yao Ming", "James Harden"],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/2/28/Houston_Rockets.svg"
+    },
+    {
+      "id": 24,
+      "nome": "Los Angeles Clippers",
+      "cidade": "Los Angeles",
+      "sigla": "LAC",
+      "ano_fundacao": 1970,
+      "arena": "Crypto.com Arena",
+      "titulos": {
+        "NBA": 0,
+        "Conferencias": 0,
+        "Divisoes": 2
+      },
+      "principais_jogadores": ["Chris Paul", "Blake Griffin", "Kawhi Leonard"],
+      "logo": "https://cdn.freebiesupply.com/images/large/2x/los-angeles-clippers-logo-transparent.png"
+    },
+    {
+      "id": 25,
+      "nome": "Memphis Grizzlies",
+      "cidade": "Memphis",
+      "sigla": "MEM",
+      "ano_fundacao": 1995,
+      "arena": "FedExForum",
+      "titulos": {
+        "NBA": 0,
+        "Conferencias": 0,
+        "Divisoes": 1
+      },
+      "principais_jogadores": ["Pau Gasol", "Marc Gasol", "Ja Morant"],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/f/f1/Memphis_Grizzlies.svg"
+    },
+    {
+      "id": 26,
+      "nome": "Minnesota Timberwolves",
+      "cidade": "Minneapolis",
+      "sigla": "MIN",
+      "ano_fundacao": 1989,
+      "arena": "Target Center",
+      "titulos": {
+        "NBA": 0,
+        "Conferencias": 0,
+        "Divisoes": 1
+      },
+      "principais_jogadores": [
+        "Kevin Garnett",
+        "Karl-Anthony Towns",
+        "Anthony Edwards"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/c/c2/Minnesota_Timberwolves_logo.svg"
+    },
+    {
+      "id": 27,
+      "nome": "Oklahoma City Thunder",
+      "cidade": "Oklahoma City",
+      "sigla": "OKC",
+      "ano_fundacao": 1967,
+      "arena": "Paycom Center",
+      "titulos": {
+        "NBA": 1,
+        "Conferencias": 4,
+        "Divisoes": 11
+      },
+      "principais_jogadores": [
+        "Kevin Durant",
+        "Russell Westbrook",
+        "Shai Gilgeous-Alexander"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/5/5d/Oklahoma_City_Thunder.svg"
+    },
+    {
+      "id": 28,
+      "nome": "Orlando Magic",
+      "cidade": "Orlando",
+      "sigla": "ORL",
+      "ano_fundacao": 1989,
+      "arena": "Amway Center",
+      "titulos": {
+        "NBA": 0,
+        "Conferencias": 2,
+        "Divisoes": 6
+      },
+      "principais_jogadores": [
+        "Shaquille O'Neal",
+        "Dwight Howard",
+        "Penny Hardaway"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/1/10/Orlando_Magic_logo.svg"
+    },
+    {
+      "id": 29,
+      "nome": "Sacramento Kings",
+      "cidade": "Sacramento",
+      "sigla": "SAC",
+      "ano_fundacao": 1923,
+      "arena": "Golden 1 Center",
+      "titulos": {
+        "NBA": 1,
+        "Conferencias": 1,
+        "Divisoes": 6
+      },
+      "principais_jogadores": [
+        "Oscar Robertson",
+        "Chris Webber",
+        "De'Aaron Fox"
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/c/c7/SacramentoKings.svg"
+    },
+    {
+      "id": 30,
+      "nome": "Washington Wizards",
+      "cidade": "Washington, D.C.",
+      "sigla": "WAS",
+      "ano_fundacao": 1961,
+      "arena": "Capital One Arena",
+      "titulos": {
+        "NBA": 1,
+        "Conferencias": 4,
+        "Divisoes": 8
+      },
+      "principais_jogadores": ["Wes Unseld", "Gilbert Arenas", "John Wall"],
+      "logo": "https://upload.wikimedia.org/wikipedia/en/0/02/Washington_Wizards_logo.svg"
+    }
+  ]
+}
