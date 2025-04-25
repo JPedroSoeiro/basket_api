@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "name": "Stephen Curry",
     "age": 37,
     "position": "Point Guard",
@@ -8,7 +7,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/curryst01.jpg"
   },
   {
-    "id": "2",
     "name": "LeBron James",
     "age": 40,
     "position": "Small Forward",
@@ -16,7 +14,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/jamesle01.jpg"
   },
   {
-    "id": "3",
     "name": "Kevin Durant",
     "age": 36,
     "position": "Small Forward",
@@ -24,7 +21,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/duranke01.jpg"
   },
   {
-    "id": "4",
     "name": "Giannis Antetokounmpo",
     "age": 30,
     "position": "Power Forward",
@@ -32,7 +28,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/antetgi01.jpg"
   },
   {
-    "id": 5,
     "name": "James Harden",
     "age": 35,
     "position": "Shooting Guard",
@@ -40,7 +35,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/hardeja01.jpg"
   },
   {
-    "id": "6",
     "name": "Luka Dončić",
     "age": 26,
     "position": "Point Guard",
@@ -48,7 +42,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/doncilu01.jpg"
   },
   {
-    "id": "7",
     "name": "Nikola Jokić",
     "age": 30,
     "position": "Center",
@@ -56,7 +49,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/jokicni01.jpg"
   },
   {
-    "id": "8",
     "name": "Jayson Tatum",
     "age": 27,
     "position": "Small Forward",
@@ -64,7 +56,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/tatumja01.jpg"
   },
   {
-    "id": "9",
     "name": "Shai Gilgeous-Alexander",
     "age": 26,
     "position": "Point Guard",
@@ -72,7 +63,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/gilgesh01.jpg"
   },
   {
-    "id": "10",
     "name": "Kawhi Leonard",
     "age": 33,
     "position": "Small Forward",
@@ -80,7 +70,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/leonaka01.jpg"
   },
   {
-    "id": "11",
     "name": "Jimmy Butler",
     "age": 35,
     "position": "Small Forward",
@@ -88,7 +77,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/butleji01.jpg"
   },
   {
-    "id": "12",
     "name": "Donovan Mitchell",
     "age": 28,
     "position": "Shooting Guard",
@@ -96,7 +84,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/mitchdo01.jpg"
   },
   {
-    "id": "13",
     "name": "Draymond Green",
     "age": 35,
     "position": "Power Forward",
@@ -104,7 +91,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/greendr01.jpg"
   },
   {
-    "id": "14",
     "name": "Victor Wembanyama",
     "age": 21,
     "position": "Center",
@@ -112,7 +98,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/wembavi01.jpg"
   },
   {
-    "id": "15",
     "name": "Ja Morant",
     "age": 25,
     "position": "Point Guard",
@@ -120,7 +105,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/moranja01.jpg"
   },
   {
-    "id": "16",
     "name": "Anthony Edwards",
     "age": 23,
     "position": "Shooting Guard",
@@ -128,7 +112,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/edwaran01.jpg"
   },
   {
-    "id": "17",
     "name": "Domantas Sabonis",
     "age": 28,
     "position": "Center",
@@ -136,7 +119,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/sabondo01.jpg"
   },
   {
-    "id": "18",
     "name": "Anthony Davis",
     "age": 32,
     "position": "Power Forward",
@@ -144,7 +126,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/davisan02.jpg"
   },
   {
-    "id": "19",
     "name": "Evan Mobley",
     "age": 23,
     "position": "Power Forward",
@@ -152,7 +133,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/mobleev01.jpg"
   },
   {
-    "id": "20",
     "name": "Joel Embiid",
     "age": 31,
     "position": "Center",
@@ -160,7 +140,6 @@
     "image": "https://www.basketball-reference.com/req/202106291/images/headshots/embiijo01.jpg"
   },
   {
-    "id": "21",
     "name": "Paolo Banchero",
     "age": 22,
     "position": "Power Forward",
