@@ -45,13 +45,14 @@ const {
     try {
       const id = req.params.id;
       const updates = req.body;
-      const updatedPlayer = await updateUser(id, updates);
   
-      if (!updatedPlayer) {
+      const updatedUser = await updateUser(id, updates);
+  
+      if (!updatedUser) {
         return res.status(404).json({ message: "Usuário não encontrado" });
       }
   
-      res.json(updatedPlayer);
+      res.json(updatedUser);
     } catch (error) {
       res.status(500).json({ error: error.message });
     }

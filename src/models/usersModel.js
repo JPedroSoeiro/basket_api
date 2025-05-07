@@ -1,4 +1,5 @@
 const supabase = require("../config/supabaseClient");
+const bcrypt = require("bcryptjs");
 
 // GET all Users
 const getAllUsers = async () => {
@@ -57,19 +58,17 @@ const updateUser = async (id, updates) => {
 
   // Verificar se o e-mail foi alterado
   if (updates.email) {
-
     // Consultar se o e-mail fornecido já está em uso por outro usuário (excluindo o próprio usuário)
     const { data: existingUser, error: emailError } = await supabase
       .from("users")
       .select("*")
       .eq("email", updates.email)
       .neq("id", id) // Excluir o próprio usuário da verificação
-      .single();
+      .maybeSingle(); // Usa maybeSingle() para não lançar erro se não encontrar o usuário
 
     if (existingUser) {
       throw new Error("O e-mail fornecido já está em uso.");
     }
-    
     if (emailError) throw emailError;
   }
 
@@ -79,7 +78,13 @@ const updateUser = async (id, updates) => {
     .update(updates)
     .eq("id", id)
     .select()
-    .single();
+    .maybeSingle(); // Usa maybeSingle() para não lançar erro se não encontrar o usuário
+
+  if (error) throw error;
+
+  if (!data) {
+    throw new Error("Usuário não encontrado");
+  }
 
   if (error) throw error;
   return data;
