@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const { loginController } = require("../controllers/authController");
+const { loginController, verifyToken } = require("../controllers/authController");
 
 // Rota de login
-router.post("/login", loginController);
+router.post("/api/login", loginController);
+router.get("/api/verify-token", verifyToken);
 
 module.exports = router;

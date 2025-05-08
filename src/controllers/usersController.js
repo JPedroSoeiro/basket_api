@@ -34,9 +34,15 @@ const {
     try {
       const playerData = req.body;
       const newPlayer = await createUser(playerData);
-      res.status(201).json(newPlayer);
+      res.status(201).json(newPlayer); // 201 Created
     } catch (error) {
-      res.status(500).json({ error: error.message });
+      if (error.message === "Por favor, escolha outro e-mail.") {
+        // Se o erro for de e-mail já existente, retorna o status 409 Conflict
+        res.status(409).json({ error: error.message });
+      } else {
+        // Para outros erros, podemos continuar retornando o 500 Internal Server Error
+        res.status(500).json({ error: error.message });
+      }
     }
   };
   

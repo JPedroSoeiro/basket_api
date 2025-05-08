@@ -21,10 +21,13 @@ const authenticateUser = async (email, password) => {
     throw new Error("Senha inválida");
   }
 
+  // Remover o campo 'password' do usuário antes de retornar
+  delete user.password;
+
   // Gerar o token JWT
   const token = jwt.sign({ userId: user.id }, "secretaChave", { expiresIn: "1h" });
 
-  return { token, user };
+  return { message: "Login bem-sucedido", token, user };
 };
 
 module.exports = {

@@ -5,10 +5,13 @@ const bcrypt = require("bcryptjs");
 const getAllUsers = async () => {
   const { data, error } = await supabase.from("users").select("*");
   if (error) throw error;
-  return data;
+  return data.map((user) => {
+    delete user.password; // Remover a senha de todos os usuários
+    return user;
+  });
 };
 
-// GET one Users
+// GET one User
 const getOneUser = async (id) => {
   const { data, error } = await supabase
     .from("users")
@@ -16,10 +19,11 @@ const getOneUser = async (id) => {
     .eq("id", id)
     .single();
   if (error) throw error;
+  delete data.password; // Remover a senha antes de retornar
   return data;
 };
 
-// CREATE new Users
+// CREATE new User
 const createUser = async (player) => {
   // Verificar se o email já está cadastrado
   const { data: existingUser, error } = await supabase
@@ -28,8 +32,14 @@ const createUser = async (player) => {
     .eq("email", player.email)
     .single();
 
+  // Se o e-mail já estiver em uso, trocamos a mensagem de erro
   if (existingUser) {
-    throw new Error("O e-mail fornecido já está em uso.");
+    throw new Error("Por favor, escolha outro e-mail."); //
+  }
+
+  if (error) {
+    // Se houver outro erro no processo de consulta, lançar um erro geral
+    throw new Error("Erro ao verificar e-mail.");
   }
 
   // Criptografar a senha antes de salvar no banco
@@ -43,11 +53,16 @@ const createUser = async (player) => {
     .select()
     .single();
 
-  if (createError) throw createError;
+  if (createError) {
+    // Se houver um erro ao criar o usuário, lançar uma mensagem apropriada
+    throw new Error("Erro ao criar o usuário.");
+  }
+
+  delete data.password; // Remover a senha antes de retornar os dados
   return data;
 };
 
-// UPDATE Users
+// UPDATE User
 const updateUser = async (id, updates) => {
   // Verificar se a senha foi incluída nas atualizações
   if (updates.password) {
@@ -86,11 +101,13 @@ const updateUser = async (id, updates) => {
     throw new Error("Usuário não encontrado");
   }
 
-  if (error) throw error;
+  // Remover o campo de senha da resposta antes de retorná-la
+  delete data.password;
+
   return data;
 };
 
-// DELETE Users
+// DELETE User
 const deleteUser = async (id) => {
   const { error } = await supabase.from("users").delete().eq("id", id);
   if (error) throw error;
