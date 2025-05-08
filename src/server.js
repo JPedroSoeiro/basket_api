@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const routes = require("./routes/playersRoutes");
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(dashboardRoutes);
 app.use(authRoutes);
 app.use(usersRoutes);
-app.use(routes);
+app.use(routes); // playersRoutes
 app.use(teamsRoutes);
 
 app.listen(3000, () => {

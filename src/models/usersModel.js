@@ -30,10 +30,7 @@ const createUser = async (player) => {
     .from("users")
     .select("*")
     .eq("email", player.email)
-    .limit(1);  // Limitar a 1 resultado para evitar múltiplos registros
-
-  // Log para depuração
-  console.log("Consulta ao banco: ", { data: existingUser, error });
+    .limit(1); // Limitar a 1 resultado para evitar múltiplos registros
 
   if (error) {
     // Se houver erro, logamos o erro e lançamos uma mensagem
@@ -59,7 +56,6 @@ const createUser = async (player) => {
 
   if (createError) {
     // Se houver erro ao criar o usuário, lançar uma mensagem apropriada
-    console.error("Erro ao criar o usuário:", createError);
     throw new Error("Erro ao criar o usuário.");
   }
 
