@@ -30,16 +30,20 @@ const createUser = async (player) => {
     .from("users")
     .select("*")
     .eq("email", player.email)
-    .single();
+    .limit(1);  // Limitar a 1 resultado para evitar múltiplos registros
 
-  // Se o e-mail já estiver em uso, trocamos a mensagem de erro
-  if (existingUser) {
-    throw new Error("Por favor, escolha outro e-mail."); //
-  }
+  // Log para depuração
+  console.log("Consulta ao banco: ", { data: existingUser, error });
 
   if (error) {
-    // Se houver outro erro no processo de consulta, lançar um erro geral
+    // Se houver erro, logamos o erro e lançamos uma mensagem
+    console.error("Erro ao verificar e-mail:", error);
     throw new Error("Erro ao verificar e-mail.");
+  }
+
+  // Se o e-mail já estiver registrado, lançamos um erro de conflito
+  if (existingUser && existingUser.length > 0) {
+    throw new Error("Por favor, escolha outro e-mail.");
   }
 
   // Criptografar a senha antes de salvar no banco
@@ -54,7 +58,8 @@ const createUser = async (player) => {
     .single();
 
   if (createError) {
-    // Se houver um erro ao criar o usuário, lançar uma mensagem apropriada
+    // Se houver erro ao criar o usuário, lançar uma mensagem apropriada
+    console.error("Erro ao criar o usuário:", createError);
     throw new Error("Erro ao criar o usuário.");
   }
 
