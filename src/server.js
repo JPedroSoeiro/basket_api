@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config(); // Carregar variáveis de ambiente
 const express = require("express");
 const cors = require("cors");
 const routes = require("./routes/playersRoutes");
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(dashboardRoutes);
 app.use(authRoutes);
 app.use(usersRoutes);
-app.use(routes); // playersRoutes
+app.use(routes);
 app.use(teamsRoutes);
 
 app.listen(3000, () => {

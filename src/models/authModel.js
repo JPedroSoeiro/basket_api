@@ -1,10 +1,11 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const supabase = require("../config/supabaseClient");
+const dotenv = require("dotenv");
+dotenv.config(); // Carregar variáveis de ambiente
 
-// Verificar se o usuário existe e validar a senha
+// Função para autenticar o usuário e gerar o JWT
 const authenticateUser = async (email, password) => {
-  // Buscar usuário pelo email
   const { data: user, error } = await supabase
     .from("users")
     .select("*")
@@ -15,17 +16,18 @@ const authenticateUser = async (email, password) => {
     throw new Error("Usuário não encontrado");
   }
 
-  // Comparar a senha fornecida com a senha armazenada (com bcrypt)
+  // Comparar a senha fornecida com a senha armazenada
   const isPasswordValid = await bcrypt.compare(password, user.password);
   if (!isPasswordValid) {
     throw new Error("Senha inválida");
   }
 
-  // Remover o campo 'password' do usuário antes de retornar
+  // Remover a senha antes de enviar para o frontend
   delete user.password;
 
-  // Gerar o token JWT
-  const token = jwt.sign({ userId: user.id }, "secretaChave", { expiresIn: "1h" });
+  const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET_KEY, {
+    expiresIn: "1h",
+  });
 
   return { message: "Login bem-sucedido", token, user };
 };
