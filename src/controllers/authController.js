@@ -32,7 +32,7 @@ const verifyToken = (req, res) => {
   // O token geralmente vem no formato 'Bearer <token>', então você pode querer extrair apenas a parte do token
   const tokenWithoutBearer = token.split(' ')[1];
 
-  jwt.verify(tokenWithoutBearer, 'secretaChave', (err, decoded) => {
+  jwt.verify(tokenWithoutBearer, process.env.JWT_SECRET_KEY, (err, decoded) => {
     if (err) {
       return res.status(401).json({ message: 'Token inválido' });
     }
