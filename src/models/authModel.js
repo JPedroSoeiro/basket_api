@@ -36,10 +36,6 @@ const authenticateUser = async (email, password) => {
 
   delete updatedUser.password;
 
-  console.log(
-    "JWT_SECRET_KEY (sign):",
-    JSON.stringify(process.env.JWT_SECRET_KEY)
-  );
 
   const token = jwt.sign(
     { userId: updatedUser.id },
@@ -48,8 +44,6 @@ const authenticateUser = async (email, password) => {
       expiresIn: "1h",
     }
   );
-
-  console.log("Token gerado (sign):", token);
 
   return { message: "Login bem-sucedido", token, user: updatedUser };
 };

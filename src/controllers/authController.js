@@ -1,19 +1,15 @@
 const { authenticateUser } = require("../models/authModel");
+const { getOneUser }= require('../models/usersModel');
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 dotenv.config();
+
 
 const loginController = async (req, res) => {
   const { email, password } = req.body;
 
   try {
     const { token, user } = await authenticateUser(email, password);
-
-    console.log("Token gerado:", token);
-    console.log(
-      "JWT_SECRET_KEY (login):",
-      JSON.stringify(process.env.JWT_SECRET_KEY)
-    );
 
     res.json({
       message: "Login bem-sucedido",
@@ -25,14 +21,8 @@ const loginController = async (req, res) => {
   }
 };
 
-const verifyToken = (req, res) => {
+const verifyToken = async (req, res) => {
   const token = req.headers["authorization"];
-
-  console.log("Authorization Header:", token);
-  console.log(
-    "JWT_SECRET_KEY (verify):",
-    JSON.stringify(process.env.JWT_SECRET_KEY)
-  );
 
   if (!token || !token.startsWith("Bearer ")) {
     return res
@@ -42,14 +32,23 @@ const verifyToken = (req, res) => {
 
   const tokenWithoutBearer = token.split(" ")[1];
 
-  jwt.verify(tokenWithoutBearer, process.env.JWT_SECRET_KEY, (err, decoded) => {
-    if (err) {
-      console.log("Erro ao verificar token:", err.message);
-      return res.status(401).json({ message: "Token inválido" });
-    }
+  try {
+    // Verifica o token
+    const decoded = jwt.verify(tokenWithoutBearer, process.env.JWT_SECRET_KEY);
+    
+    // Obtém os dados do usuário através do Model
+    const user = await getOneUser(decoded.userId);
 
-    res.json({ message: "Token válido", userId: decoded.userId });
-  });
+    res.json({ 
+      message: "Token válido",
+      user
+    });
+  } catch (err) {
+    console.log("Erro ao verificar token:", err.message);
+    
+    const statusCode = err.message === "Usuário não encontrado" ? 404 : 401;
+    return res.status(statusCode).json({ message: err.message });
+  }
 };
 
 module.exports = {
